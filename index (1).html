@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生日快乐，我的宝贝！</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff6b8b',
+            secondary: '#ff9aa2',
+            accent: '#ffb7b2',
+            light: '#f8f9fa',
+            dark: '#343a40',
+          },
+          fontFamily: {
+            romantic: ['Dancing Script', 'cursive'],
+            main: ['Poppins', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-float-delay-1 {
+        animation: float 6s ease-in-out 1s infinite;
+      }
+      .animate-float-delay-2 {
+        animation: float 6s ease-in-out 2s infinite;
+      }
+      .animate-float-delay-3 {
+        animation: float 6s ease-in-out 3s infinite;
+      }
+      .bg-gradient-romantic {
+        background: linear-gradient(135deg, #ff6b8b 0%, #ff9aa2 50%, #ffb7b2 100%);
+      }
+      .gift-box {
+        position: relative;
+        perspective: 1000px;
+      }
+      .gift-box-lid {
+        transition: transform 0.5s ease;
+        transform-origin: center bottom;
+      }
+      .gift-box:hover .gift-box-lid {
+        transform: rotateX(-110deg);
+      }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-main bg-light text-dark overflow-x-hidden">
+  <!-- 导航栏 -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#hero" class="text-2xl font-romantic text-white text-shadow">生日快乐</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#hero" class="text-white hover:text-primary transition-colors">首页</a>
+        <a href="#photos" class="text-white hover:text-primary transition-colors">照片回忆</a>
+        <a href="#gift" class="text-white hover:text-primary transition-colors">生日礼物</a>
+        <a href="#message" class="text-white hover:text-primary transition-colors">我的心里话</a>
+      </div>
+      <button class="md:hidden text-white text-2xl" id="menuToggle">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+      <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+        <a href="#hero" class="text-dark hover:text-primary transition-colors">首页</a>
+        <a href="#photos" class="text-dark hover:text-primary transition-colors">照片回忆</a>
+        <a href="#gift" class="text-dark hover:text-primary transition-colors">礼物介绍</a>
+        <a href="#message" class="text-dark hover:text-primary transition-colors">我的心里话</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 英雄区域 -->
+  <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-romantic">
+    <!-- 装饰爱心 -->
+    <div class="absolute top-1/4 left-10 text-4xl text-white opacity-70 animate-float">
+      <i class="fa fa-heart"></i>
+    </div>
+    <div class="absolute top-1/3 right-10 text-5xl text-white opacity-60 animate-float-delay-1">
+      <i class="fa fa-heart"></i>
+    </div>
+    <div class="absolute bottom-1/3 left-1/4 text-4xl text-white opacity-80 animate-float-delay-2">
+      <i class="fa fa-heart"></i>
+    </div>
+    <div class="absolute bottom-1/4 right-1/4 text-5xl text-white opacity-70 animate-float-delay-3">
+      <i class="fa fa-heart"></i>
+    </div>
+    
+    <div class="container mx-auto px-4 z-10 text-center">
+      <div class="relative inline-block">
+        <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-romantic text-white text-shadow mb-6"><span class="block"><br>
+        </span></h1>
+        <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-romantic text-white text-shadow mb-6"> <span class="block">小笨狗满20岁了！</span> </h1>
+<div class="absolute -bottom-4 left-0 right-0 h-1 bg-white/70 rounded-full"></div>
+      </div>
+      
+      <div class="w-64 h-64 md:w-80 md:h-80 mx-auto mt-10 rounded-full overflow-hidden border-4 border-white shadow-xl transform transition-transform hover:scale-105">
+        <img src="http://sy6zzfeyb.hn-bkt.clouddn.com/010.jpg" alt="照片" class="w-full h-full object-cover">
+      </div>
+      
+      <p class="text-[clamp(1.2rem,3vw,1.8rem)] text-white mt-8 max-w-2xl mx-auto">&nbsp;
+       </p>
+      
+      <div class="mt-12">
+        <a href="#photos" class="inline-block px-8 py-3 bg-white text-primary font-bold rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
+          查看我们的回忆 <i class="fa fa-heart ml-2"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- 波浪装饰 -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-auto">
+        <path fill="#f8f9fa" fill-opacity="1" d="M0,256L48,245.3C96,235,192,213,288,208C384,203,480,213,576,229.3C672,245,768,267,864,266.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 照片回忆区域 -->
+  <section id="photos" class="py-20 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(2rem,5vw,3rem)] font-romantic text-center mb-16 relative inline-block mx-auto">
+        我们的回忆
+        <div class="absolute -bottom-2 left-0 right-0 h-1 bg-primary rounded-full w-2/3 mx-auto"></div>
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 照片卡片 1 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl">
+          <div class="h-64 overflow-hidden">
+            <img src="http://sy6zzfeyb.hn-bkt.clouddn.com/007.jpg" alt="我们的第一张合照" class="h-full object-cover transform transition-transform hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">我们的第一张合照</h3>
+            <p class="text-gray-600">那天阳光很好，你笑得很灿烂，这是我们故事的开始。</p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 2 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl">
+          <div class="h-64 overflow-hidden">
+            <img src="http://sy6zzfeyb.hn-bkt.clouddn.com/005.jpg" alt="第一次旅行" class="w-full h-full object-cover transform transition-transform hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">第一次旅行</h3>
+            <p class="text-gray-600">一起看海，一起吃美食，一起探索新的地方，那是最美好的时光。</p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 3 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/seed/memory3/600/400" alt="生日惊喜" class="w-full h-full object-cover transform transition-transform hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">生日惊喜</h3>
+            <p class="text-gray-600">去年我为你准备的生日惊喜，你感动的样子我永远不会忘记。</p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 4 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/seed/memory4/600/400" alt="冬日的温暖" class="w-full h-full object-cover transform transition-transform hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">冬日的温暖</h3>
+            <p class="text-gray-600">下雪天，我们一起堆雪人，手牵手散步，寒冷的天气也变得温暖。</p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 5 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/seed/memory5/600/400" alt="一起做饭" class="w-full h-full object-cover transform transition-transform hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">一起做饭</h3>
+            <p class="text-gray-600">虽然过程有些混乱，但一起做饭的时光总是充满欢声笑语。</p>
+          </div>
+        </div>
+        
+        <!-- 照片卡片 6 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all hover:-translate-y-2 hover:shadow-xl">
+          <div class="h-64 overflow-hidden">
+            <img src="https://picsum.photos/seed/memory6/600/400" alt="海边日落" class="w-full h-full object-cover transform transition-transform hover:scale-110">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">海边日落</h3>
+            <p class="text-gray-600">最美的不是日落，而是日落时身边有你。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#gift" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
+          查看生日礼物 <i class="fa fa-gift ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 礼物介绍区域 -->
+  <section id="gift" class="py-20 bg-gradient-to-b from-pink-50 to-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(2rem,5vw,3rem)] font-romantic text-center mb-16 relative inline-block mx-auto">
+        生日礼物礼盒
+        <div class="absolute -bottom-2 left-0 right-0 h-1 bg-primary rounded-full w-2/3 mx-auto"></div>
+      </h2>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- 礼物盒子动画 -->
+        <div class="flex justify-center order-2 lg:order-1">
+          <div class="gift-box w-64 h-64 relative cursor-pointer">
+            <!-- 礼物盒底部 -->
+            <div class="absolute inset-0 bg-red-500 rounded-lg shadow-lg">
+              <div class="absolute inset-0 border-4 border-red-600 rounded-lg"></div>
+              <div class="absolute top-1/2 left-0 right-0 h-12 bg-red-600 transform -translate-y-1/2"></div>
+              <div class="absolute top-0 bottom-0 left-1/2 w-12 bg-red-600 transform -translate-x-1/2"></div>
+            </div>
+            
+            <!-- 礼物盒盖子 -->
+            <div class="gift-box-lid absolute inset-0 bg-red-600 rounded-lg shadow-lg transform origin-bottom">
+              <div class="absolute inset-0 border-4 border-red-700 rounded-lg"></div>
+              <div class="absolute top-1/2 left-0 right-0 h-12 bg-red-700 transform -translate-y-1/2"></div>
+              <div class="absolute top-0 bottom-0 left-1/2 w-12 bg-red-700 transform -translate-x-1/2"></div>
+              <div class="absolute top-0 left-1/2 w-16 h-8 bg-red-700 transform -translate-x-1/2 -translate-y-1/2 rounded-t-lg"></div>
+            </div>
+            
+            <!-- 礼物盒内的爱心 -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 transition-opacity duration-500 gift-box:hover:opacity-100">
+              <div class="text-8xl text-white animate-pulse">
+                <i class="fa fa-heart"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 礼物列表 -->
+        <div class="order-1 lg:order-2">
+          <div class="bg-white rounded-xl p-8 shadow-xl">
+            <h3 class="text-2xl font-bold mb-6">礼盒内容</h3>
+            
+            <div class="space-y-6">
+              <!-- 礼物 1 -->
+              <div class="flex items-start">
+                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                  <i class="fa fa-camera-retro text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1">情侣拍立得相机</h4>
+                  <p class="text-gray-600">我们可以用它记录更多美好的瞬间，让每一刻都成为永恒的回忆。</p>
+                </div>
+              </div>
+              
+              <!-- 礼物 2 -->
+              <div class="flex items-start">
+                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                  <i class="fa fa-book text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1">定制爱情相册</h4>
+                  <p class="text-gray-600">里面装满了我们的照片和我写的情书，记录着我们的爱情故事。</p>
+                </div>
+              </div>
+              
+              <!-- 礼物 3 -->
+              <div class="flex items-start">
+                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                  <i class="fa fa-music text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1">定制音乐盒</h4>
+                  <p class="text-gray-600">当你打开它，就会听到我为你录制的生日祝福和我们最爱的那首歌。</p>
+                </div>
+              </div>
+              
+              <!-- 礼物 4 -->
+              <div class="flex items-start">
+                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                  <i class="fa fa-heart text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1">情侣手链</h4>
+                  <p class="text-gray-600">一对定制的情侣手链，象征着我们永远在一起，永不分离。</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-200">
+              <p class="text-lg font-semibold text-primary">希望你会喜欢这份生日礼物，就像我喜欢你一样，永远不变。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#message" class="inline-block px-8 py-3 bg-primary text-white font-bold rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
+          我的心里话 <i class="fa fa-heart ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 心里话区域 -->
+  <section id="message" class="py-20 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(2rem,5vw,3rem)] font-romantic text-center mb-16 relative inline-block mx-auto">
+        我的心里话
+        <div class="absolute -bottom-2 left-0 right-0 h-1 bg-primary rounded-full w-2/3 mx-auto"></div>
+      </h2>
+      
+      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-8 md:p-12 relative">
+        <!-- 装饰爱心 -->
+        <div class="absolute -top-10 -left-10 text-6xl text-primary/20">
+          <i class="fa fa-heart"></i>
+        </div>
+        <div class="absolute -bottom-10 -right-10 text-6xl text-primary/20">
+          <i class="fa fa-heart"></i>
+        </div>
+        
+        <div class="relative z-10">
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            亲爱的，生日快乐！
+          </p>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            今天是你的生日，我想借此机会告诉你，你对我来说有多么重要。
+            自从你走进我的生活，一切都变得更加美好。你是我每天醒来的理由，
+            是我遇到困难时的支持，是我分享快乐的人。
+          </p>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            这一年，我们一起经历了很多，有欢笑，有泪水，有挑战，也有成长。
+            每一刻我都珍惜，因为有你在我身边。
+          </p>
+          <p class="text-lg md:text-xl leading-relaxed mb-6">
+            我为你准备的这份礼物，希望它能带给你快乐，就像你带给我的一样多。
+            但更重要的是，我想让你知道，无论未来如何，我都会一直在你身边，
+            爱你，支持你，陪伴你。
+          </p>
+          <p class="text-lg md:text-xl leading-relaxed mb-8">
+            愿你的生日充满喜悦和爱，愿新的一岁带给你所有你希望的东西。
+            我爱你，永远永远。
+          </p>
+          
+          <div class="text-right">
+            <p class="text-xl font-romantic text-primary">永远爱你的我</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <div class="text-4xl mb-4">
+          <i class="fa fa-heart text-primary animate-pulse"></i>
+        </div>
+        <p class="text-xl font-bold">再次祝你生日快乐，我的宝贝！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <p class="text-lg mb-4">用爱制作 ❤️</p>
+        <p class="text-gray-400">为我最爱的人，永远的生日快乐</p>
+        
+        <div class="mt-8 flex justify-center space-x-6">
+          <a href="#hero" class="text-white hover:text-primary transition-colors">
+            <i class="fa fa-home text-xl"></i>
+          </a>
+          <a href="#photos" class="text-white hover:text-primary transition-colors">
+            <i class="fa fa-camera text-xl"></i>
+          </a>
+          <a href="#gift" class="text-white hover:text-primary transition-colors">
+            <i class="fa fa-gift text-xl"></i>
+          </a>
+          <a href="#message" class="text-white hover:text-primary transition-colors">
+            <i class="fa fa-heart text-xl"></i>
+          </a>
+        </div>
+        
+        <div class="mt-8 text-gray-400 text-sm">
+          <p>用❤️制作 | 永远爱你</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('bg-white', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+        navbar.querySelectorAll('a').forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-dark');
+        });
+        document.getElementById('menuToggle').classList.remove('text-white');
+        document.getElementById('menuToggle').classList.add('text-dark');
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+        navbar.querySelectorAll('a').forEach(link => {
+          link.classList.add('text-white');
+          link.classList.remove('text-dark');
+        });
+        document.getElementById('menuToggle').classList.add('text-white');
+        document.getElementById('menuToggle').classList.remove('text-dark');
+      }
+    });
+    
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuToggle.innerHTML = mobileMenu.classList.contains('hidden') 
+        ? '<i class="fa fa-bars"></i>' 
+        : '<i class="fa fa-times"></i>';
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动菜单（如果打开）
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuToggle.innerHTML = '<i class="fa fa-bars"></i>';
+        }
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // 礼物盒子动画
+    const giftBox = document.querySelector('.gift-box');
+    giftBox.addEventListener('mouseenter', () => {
+      setTimeout(() => {
+        document.querySelector('.gift-box-lid').style.transform = 'rotateX(-110deg)';
+      }, 100);
+    });
+    
+    giftBox.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        document.querySelector('.gift-box-lid').style.transform = 'rotateX(0deg)';
+      }, 100);
+    });
+    
+    // 图片懒加载
+    document.addEventListener("DOMContentLoaded", function() {
+      const lazyImages = [].slice.call(document.querySelectorAll("img"));
+      
+      if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              let lazyImage = entry.target;
+              lazyImage.src = lazyImage.dataset.src;
+              lazyImageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          lazyImageObserver.observe(lazyImage);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
+    
